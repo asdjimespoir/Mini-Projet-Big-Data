@@ -28,7 +28,7 @@ Lancer kafka
 ```
 docker exec -it kafka bash
 ```
-![3](https://user-images.githubusercontent.com/53083052/177600822-341c14ed-365f-4d8e-82c7-69f82269a6d2.gif)
+![1-Creation_des_topics](https://user-images.githubusercontent.com/53083052/177600135-ed6c2c1d-0a15-4f7e-88cd-730ebdcca9ca.gif)
 
 ### Création des topics kafka
 ```
@@ -37,6 +37,8 @@ kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 -
 
 ```
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic Normal
+![1-Creation_des_topics](https://user-images.githubusercontent.com/53083052/177610386-e33b79be-b6d0-4fc4-b7a1-40afdaebfe02.gif)
+
 ```
 ### Simulation des Producteurs et Consommateurs
 #### 1er Cas d'utilisation :
@@ -48,6 +50,8 @@ Utilisons ensuite le ConsumerAlerte.py pour lire les messages simulés d'urgence
 ```
 python ConsumerAlerte.py
 ```
+![2-Streaming_sur_les_alertes](https://user-images.githubusercontent.com/53083052/177610943-b55ecef4-45eb-49df-b408-08899e1097d9.gif)
+
 #### 2e Cas d’utilisation :
 Dans ce cas d'utilisation, nous allons utiliser du Machine Learning afin de prédire si un patient est en état critique ou normal. Pour ce fait, nous avons un pipeline du modèle de classification choisit comme étant celui avec le meilleur score selon les tests effectués.
 Le principe consiste à prédire la colonne target en supposant qu'on a un dataset n'ayant pas cette colonne. En suite une fois fait une utilisons cette colonne pour envoyer des alertes aux urgentistes (target = 0 : état normal, target = 1 : état critique).
@@ -59,6 +63,8 @@ Utilisons ensuite le ConsumerAlerte.py pour lire les messages simulés d'urgence
 ```
 python ConsumerAlerte.py
 ```
+![6 2-Traitement_avec_prediction](https://user-images.githubusercontent.com/53083052/177611421-507d14c7-4ee3-4ade-a970-2da8a92b2093.gif)
+
 ### Sauvergarde des données sur MongoDB
 Lancer Mongo
 ```
@@ -68,10 +74,14 @@ Utiliser un connecteur kafka pour récupérer des données des topics et les env
 ```
 ./Connector.sh
 ```
+![Connector](https://user-images.githubusercontent.com/53083052/177611825-88f1ccd1-5ff1-457f-978b-042d6b8f6a3a.gif)
+
 ### Création des des Rôles et Utilisateurs sur la base mongo
 ```
 mongo -u root -p root < CreateRoleAndUser.js
 ```
+![RolesUsers](https://user-images.githubusercontent.com/53083052/177612524-3fcfc07b-9096-4d79-81dd-1d325b6a56b2.gif)
+
 ## Sources
 * [Sklearn](https://scikit-learn.org/stable/)
 * [Mongo Roles Users](https://www.mongodb.com/docs/manual/tutorial/manage-users-and-roles/)
