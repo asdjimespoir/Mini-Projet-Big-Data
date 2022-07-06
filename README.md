@@ -68,12 +68,12 @@ Utiliser un connecteur kafka pour récupérer des données des topics et les env
 mongo -u root -p root < CreateRoleAndUser.js
 ```
 ## Sources
-
-* [MongoDB Connector Configuration](https://www.mongodb.com/docs/kafka-connector/current/)
-* [Kafka Documentation](https://kafka.apache.org/documentation/)
-* [Confluent Docker-Compose file](https://github.com/confluentinc)
 * [Sklearn](https://scikit-learn.org/stable/)
 * [Mongo Roles Users](https://www.mongodb.com/docs/manual/tutorial/manage-users-and-roles/)
+* [Kafka Documentation](https://kafka.apache.org/documentation/)
+* [Confluent Docker-Compose file](https://github.com/confluentinc)
+* [MongoDB Connector Configuration](https://www.mongodb.com/docs/kafka-connector/current/)
+
 
 ## Aller plus loin
 Merci de vous rendre le dossier Demo du referencciel afin de voir l'execution du projet du début à la fin.
