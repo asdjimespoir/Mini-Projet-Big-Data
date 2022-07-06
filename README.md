@@ -21,6 +21,8 @@ Deuxièmement kafka:
 ```
 docker-compose up --build -d
 ```
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/53083052/177546269-57978559-d612-4878-9722-efa3ffb2b60a.gif)
+
 Lancer kafka
 ```
 docker exec -it kafka bash
