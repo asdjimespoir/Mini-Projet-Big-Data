@@ -28,6 +28,8 @@ Lancer kafka
 ```
 docker exec -it kafka bash
 ```
+![3](https://user-images.githubusercontent.com/53083052/177600822-341c14ed-365f-4d8e-82c7-69f82269a6d2.gif)
+
 ### Création des topics kafka
 ```
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic Alerte
