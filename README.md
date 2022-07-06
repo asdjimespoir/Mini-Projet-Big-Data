@@ -7,7 +7,7 @@ Dans ce mini-projet, nous décrivons plus en détails les spécifications de ce 
 <img width="964" alt="Architecture" src="https://user-images.githubusercontent.com/53083052/177451032-5269919d-4908-4354-a26c-9166088feb74.png">
 
 Dans un premier temps, nous avons choisit cette architecture afin de repondre aux exigences qu'oblige le projet.
-En utilisant le cluster KAFKA, nous aspirons a une approche plus globale et en meme temps performante.
+En utilisant le cluster KAFKA, nous aspirons à une approche plus globale et en même temps performante.
 Deuxièmement kafka:
 * est un système de messagerie distribué open source.
 * est tolérant aux pannes, performant, hautement distribuable et adapté aux traitements batchs comme streams.
@@ -70,10 +70,10 @@ mongo -u root -p root < CreateRoleAndUser.js
 ## Sources
 
 * [MongoDB Connector Configuration](https://www.mongodb.com/docs/kafka-connector/current/)
-* [Kafka_Documentation](https://kafka.apache.org/documentation/)
+* [Kafka Documentation](https://kafka.apache.org/documentation/)
 * [Confluent Docker-Compose file](https://github.com/confluentinc)
 * [Sklearn](https://scikit-learn.org/stable/)
-* [Mongo_Roles_Users](https://www.mongodb.com/docs/manual/tutorial/manage-users-and-roles/)
+* [Mongo Roles Users](https://www.mongodb.com/docs/manual/tutorial/manage-users-and-roles/)
 
 ## Aller plus loin
 Merci de vous rendre le dossier Demo du referencciel afin de voir l'execution du projet du début à la fin.
