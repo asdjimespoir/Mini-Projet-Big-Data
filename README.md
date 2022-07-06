@@ -21,9 +21,6 @@ Deuxièmement kafka:
 ```
 docker-compose up --build -d
 ```
-![1-Creation_des_topics](https://user-images.githubusercontent.com/53083052/177600135-ed6c2c1d-0a15-4f7e-88cd-730ebdcca9ca.gif)
-
-
 Lancer kafka
 ```
 docker exec -it kafka bash
@@ -37,9 +34,9 @@ kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 -
 
 ```
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic Normal
+```
 ![1-Creation_des_topics](https://user-images.githubusercontent.com/53083052/177610386-e33b79be-b6d0-4fc4-b7a1-40afdaebfe02.gif)
 
-```
 ### Simulation des Producteurs et Consommateurs
 #### 1er Cas d'utilisation :
 Nous devons utiliser le Produccer1.py afin d'envoyer des alertes aux médecins et infirmiers urgentistes tous en utilisant un fichier csv déjà prêt(avec la colonne target).
