@@ -17,7 +17,7 @@ Deuxièmement kafka:
 * [docker](https://docs.docker.com/get-docker/)
 * [docker-compose](https://docs.docker.com/compose/install/)
 ## Mise en place de l'environ
-Démarrer les containeurs
+### Démarrer les containeurs
 ```
 docker-compose up --build -d
 ```
@@ -25,7 +25,7 @@ Lancer kafka
 ```
 docker exec -it kafka bash
 ```
-Création des topics kafka
+### Création des topics kafka
 ```
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic Alerte
 ```
@@ -33,8 +33,8 @@ kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 -
 ```
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 2 --topic Normal
 ```
-
-** 1er Cas d'utilisation
+### Simulation des Producteurs et Consommateurs
+#### 1er Cas d'utilisation :
 Nous devons utiliser le Produccer1.py afin d'envoyer des alertes aux médecins et infirmiers urgentistes tous en utilisant un fichier csv déjà prêt(avec la colonne target).
 ```
 python Producer1.py
@@ -43,7 +43,7 @@ Utilisons ensuite le ConsumerAlerte.py pour lire les messages simulés d'urgence
 ```
 python ConsumerAlerte.py
 ```
-** 2e Cas d’utilisation
+#### 2e Cas d’utilisation :
 Dans ce cas d'utilisation, nous allons utiliser du Machine Learning afin de prédire si un patient est en état critique ou normal. Pour ce fait, nous avons un pipeline du modèle de classification choisit comme étant celui avec le meilleur score selon les tests effectués.
 Le principe consiste à prédire la colonne target en supposant qu'on a un dataset n'ayant pas cette colonne. En suite une fois fait une utilisons cette colonne pour envoyer des alertes aux urgentistes (target = 0 : état normal, target = 1 : état critique).
 
@@ -54,3 +54,26 @@ Utilisons ensuite le ConsumerAlerte.py pour lire les messages simulés d'urgence
 ```
 python ConsumerAlerte.py
 ```
+### Sauvergarde des données sur MongoDB
+Lancer Mongo
+```
+docker exec -it mongo bash
+```
+Utiliser un connecteur kafka pour récupérer des données des topics et les envoyer sur le base mongo
+```
+./Connector.sh
+```
+### Création des des Rôles et Utilisateurs sur la base mongo
+```
+mongo -u root -p root < CreateRoleAndUser.js
+```
+## Sources
+
+* [MongoDB Connector Configuration](https://www.mongodb.com/docs/kafka-connector/current/)
+* [Kafka_Documentation](https://kafka.apache.org/documentation/)
+* [Confluent Docker-Compose file](https://github.com/confluentinc)
+* [Sklearn](https://scikit-learn.org/stable/)
+* [Mongo_Roles_Users](https://www.mongodb.com/docs/manual/tutorial/manage-users-and-roles/)
+
+## Aller plus loin
+Merci de vous rendre le dossier Demo du referencciel afin de voir l'execution du projet du début à la fin.
