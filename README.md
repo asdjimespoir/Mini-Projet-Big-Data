@@ -16,3 +16,4 @@ Deuxièmement kafka:
 * [Kafka](https://kafka.apache.org/downloads)
 * [docker](https://docs.docker.com/get-docker/)
 * [docker-compose](https://docs.docker.com/compose/install/)
+## Mise en place de l'environ
